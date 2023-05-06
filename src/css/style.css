@@ -1,0 +1,65 @@
+.ring {
+  width: 60%;
+  margin: auto;
+  background-color: rgb(244, 247, 254);
+}
+
+.card {
+  width: 35%;
+  margin: auto;
+}
+
+.profile {
+  display: flex;
+}
+
+#drop-menu {
+  margin-left: -98px;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  .profile {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+  #drop-menu {
+    margin-left: 5px;
+    margin-top: -130px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ring {
+    width: 80%;
+    margin: auto;
+  }
+  .card {
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ring {
+    width: 100%;
+    margin: auto;
+  }
+  .card {
+    width: 100%;
+    margin: 20px;
+  }
+}
+
+#btn:focus {
+  background-color: rgb(83, 109, 255);
+  font-weight: 600;
+  color: white;
+}
+
+.error-text {
+  font-style: italic;
+  font-size: 12px;
+  color: red;
+}

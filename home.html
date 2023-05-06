@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  </head>
+  <body style="background-color: rgb(242, 251, 255)">
+    <script>
+      const session = sessionStorage.getItem('login');
+      if (!session) {
+        window.location.href = 'index.html';
+      }
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-0 position-sticky top-0" style="z-index: 1">
+      <div class="container-fluid p-0">
+        <a class="navbar-brand m-2 ms-lg-4" href="#"><img style="height: 40px" src="./src/img/AYO.png" alt="" /></a>
+        <button class="navbar-toggler text-primary my-2 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse me-lg-4" id="navbarText">
+          <ul class="navbar-nav me-auto m-0 w-100 justify-content-end">
+            <li class="nav-item text-center">
+              <a class="nav-link mx-1 fw-normal active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link mx-1 fw-normal" href="donasi.html">Donasi</a>
+            </li>
+            <li class="nav-item text-center">
+              <a class="nav-link mx-1 fw-normal" href="Artikel.html">Artikel</a>
+            </li>
+          </ul>
+        </div>
+        <div class="profile me-4">
+          <div class="dropdown">
+            <button type="button" style="border: none" class="rounded-circle p-0 btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <img id="profil" src="./src/img/profile.png" style="width: 40px" class="rounded-circle" alt="" />
+            </button>
+            <ul class="dropdown-menu" id="drop-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a id="profil-name" class="dropdown-item" href="#">Ofline</a></li>
+              <li><a id="logout" class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-center">Halaman Home</h1>
+    <script>
+      const nameProfile = sessionStorage.getItem('login');
+      if (nameProfile) {
+        document.getElementById('profil-name').innerHTML = nameProfile;
+      } else {
+        document.getElementById('profil-name').innerHTML = 'Ofline';
+      }
+      const logout = document.getElementById('logout');
+      logout.addEventListener('click', () => {
+        if (confirm('Apakah yakin keluar?')) {
+          sessionStorage.removeItem('login');
+          alert('Logout berhasil!');
+          window.location.href = 'index.html';
+        }
+      });
+    </script>
+    <script src="./src/js/bootstrap.min.js"></script>
+  </body>
+</html>
