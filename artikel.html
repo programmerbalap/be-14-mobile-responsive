@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Artikel</title>
+	<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+	<link rel="stylesheet" href="artikel.css">
+</head>
+<body>
+	<script>
+		const session = sessionStorage.getItem('login');
+		if (!session) {
+		  window.location.href = 'index.html';
+		}
+	  </script>
+	  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg p-0 position-sticky top-0" style="z-index: 1">
+		<div class="container-fluid p-0">
+		  <a class="navbar-brand m-2 ms-lg-4" href="#"><img style="height: 40px" src="./src/img/AYO.png" alt="" /></a>
+		  <button class="navbar-toggler text-primary my-2 me-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse me-lg-4" id="navbarText">
+			<ul class="navbar-nav me-auto m-0 w-100 justify-content-end">
+			  <li class="nav-item text-center">
+				<a class="nav-link mx-1 fw-normal active" href="home.html">Home</a>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link mx-1 fw-normal" href="donasi.html">Donasi</a>
+			  </li>
+			  <li class="nav-item text-center">
+				<a class="nav-link mx-1 fw-normal" href="Artikel.html">Artikel</a>
+			  </li>
+			</ul>
+		  </div>
+		  <div class="profile me-4">
+			<div class="dropdown">
+			  <button type="button" style="border: none" class="rounded-circle p-0 btn" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+				<img id="profil" src="./src/img/profile.png" style="width: 40px" class="rounded-circle" alt="" />
+			  </button>
+			  <ul class="dropdown-menu" id="drop-menu" aria-labelledby="dropdownMenuButton1">
+				<li><a id="profil-name" class="dropdown-item" href="#">Ofline</a></li>
+				<li><a id="logout" class="dropdown-item" href="#">Logout</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+	<div class="article" onclick="gotoDetail1()">
+		<img src="gambar/judul1.jpg" alt="Gambar artikel">
+		<div>
+			<h2>Lebaran di Desa yang Tenggelam</h2>
+			<p>Merayakan Idulfitri di desa yang terdampak krisis iklim.</p>
+		</div>
+	</div>
+
+	<div class="article" onclick="gotoDetail2()">
+		<img src="gambar/gambar8.png" alt="Gambar artikel">
+		<div>
+			<h2>IPCC Ungkap Krisis Iklim Makin Nyata, Aksi Iklim Ambisius Dibutuhkan Sekarang</h2>
+			<p>Kenaikan suhu Bumi bisa menuju angka 2.8°C pada 2100, melebihi batas aman pemanasan global. Aksi iklim yang ambisius dibutuhkan sekarang juga.</p>
+		</div>
+	</div>
+
+	<div class="article" onclick="gotoDetail3()">
+		<img src="gambar/gambar10.jpg" alt="Gambar artikel">
+		<div>
+			<h2>50 Juta Hektar Hutan Dunia Hancur, Sementara Sektor Minyak Sawit di Indonesia Tidak Direformasi</h2>
+			<p>Pada tahun 2020, diperkirakan 50 juta hektar hutan – area seluas Spanyol terancam dihancurkan untuk komoditas pertanian meski banyak perusahaan telah berkomitmen untuk mengakhiri deforestasi dalam kurun waktu sepuluh tahun, menurut laporan dari Greenpeace International. Sektor minyak sawit adalah pendorong utama deforestasi di Asia Tenggara, dimana 14.5 juta hektar hutan dihancurkan untuk komoditas antara tahun 2010 dan 2015.</p>
+		</div>
+	</div>
+
+	<div class="article" onclick="gotoDetail4()">
+		<img src="gambar/gambar12.jpg" alt="Gambar artikel">
+		<div>
+			<h2>"The Earth is Burning"</h2>
+			<p>"Apakah Anda merasa panas belakangan ini? Ternyata, suhu Bumi kita sedang mengalami peningkatan yang mengkhawatirkan.</p>
+		</div>
+	</div>
+
+	<script>
+		const nameProfile = sessionStorage.getItem('login');
+		if (nameProfile) {
+		  document.getElementById('profil-name').innerHTML = nameProfile;
+		} else {
+		  document.getElementById('profil-name').innerHTML = 'Ofline';
+		}
+		const logout = document.getElementById('logout');
+		logout.addEventListener('click', () => {
+		  if (confirm('Apakah yakin keluar?')) {
+			sessionStorage.removeItem('login');
+			alert('Logout berhasil!');
+			window.location.href = 'index.html';
+		  }
+		});
+	  </script>
+	<script src="src/js/donasi.js"></script>
+	<script src="./src/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

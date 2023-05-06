@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="src/css/style.css" />
     <link rel="stylesheet" href="src/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="home.css">
   </head>
   <body style="background-color: rgb(242, 251, 255)">
     <script>
@@ -48,7 +49,27 @@
         </div>
       </div>
     </nav>
-    <h1 class="text-center">Halaman Home</h1>
+    <div class="center">
+      <h1>Selamat Datang</h1>
+    </div>
+
+    <hr>
+
+    <h2 class="center">Artikel</h2>
+    <div class="image-container">
+      <div onclick="gotoDetail3()">
+        <img src="gambar/gambar1.jpg" alt="Gambar 1" >
+        <h5 class="caption">Lebaran di Desa yang Tenggelam</h5>
+      </div>
+      <div onclick="gotoDetail3()">
+        <img src="gambar/gambar7.jpg" alt="Gambar 2">
+        <h5 class="caption">IPCC Ungkap Krisis Iklim Makin Nyata, Aksi Iklim Ambisius Dibutuhkan Sekarang</h5>
+      </div>
+      <div onclick="gotoDetail3()">
+        <img src="gambar/gambar10.jpg" alt="Gambar 3">
+        <h5 class="caption">50 Juta Hektar Hutan Dunia Hancur, Sementara Sektor Minyak Sawit di Indonesia Tidak Direformasi</h5>
+      </div>
+    </div>
     <script>
       const nameProfile = sessionStorage.getItem('login');
       if (nameProfile) {
@@ -66,5 +87,6 @@
       });
     </script>
     <script src="./src/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
