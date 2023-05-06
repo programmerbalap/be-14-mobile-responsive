@@ -1,0 +1,59 @@
+/* Style the images */
+.image-container {
+	text-align: center;
+	margin: 10px;
+  }
+  .image-container div {
+	display: inline-block;
+	margin: 0 10px;
+	text-align: center;
+	vertical-align: top;
+	width: 100%; /* changed to full width on mobile devices */
+	max-width: 300px; /* set a maximum width for images */
+  }
+  .image-container img {
+	width: 100%;
+	height: auto;
+  }
+  
+  /* Center the text */
+  .center {
+	text-align: center;
+  }
+  
+  /* Style the horizontal rule */
+  hr {
+	border: none;
+	border-top: 1px solid black;
+	margin-top: 100px;
+	margin-bottom: 50px;
+  }
+  
+  /* Make the article heading responsive */
+  h2.center {
+	font-size: 24px;
+	margin-top: 30px;
+  }
+  
+  /* Make the images responsive */
+  @media screen and (min-width: 480px) {
+	.image-container div {
+	  width: 45%; /* set width to 45% for medium-sized screens */
+	  max-width: none; /* remove the maximum width for images */
+	}
+  }
+  
+  @media screen and (min-width: 768px) {
+	.image-container div {
+	  width: 30%; /* set width to 30% for large screens */
+	  max-width: none; /* remove the maximum width for images */
+	}
+  }
+  
+  /* Add a margin between the caption and image on small screens */
+  @media screen and (max-width: 479px) {
+	.caption {
+	  margin-top: 10px;
+	}
+  }
+  
